@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<h:head>
+		<title>Cadastramento de bens</title>
+	</h:head>
+	<h:body>
+		<h:form>
+		<h:commandLink value="Mostrar Bens" action="listaBens.xhtml" immediate="true"/>
+		<h1>Cadastro de bens</h1>
+		<h:messages/>
+		<h:panelGrid columns="2">
+			<h:outputText value="Descrição: *"/>
+			<h:inputText value="#{controleController.controle.descricao}"
+			required="true"
+			requiredMessage="O campo Descrição é obrigatorio!">
+			<f:validateLength maximum="60"/>
+			</h:inputText>
+			
+			<h:outputText value="Especificação do Bem: *"/>
+			<h:inputText value="#{controleController.controle.especificacao}"
+			required="true"
+			requiredMessage="O campo Especificação é obrigatorio!">
+			<f:validateLength maximum="60"/>
+			</h:inputText>
+			
+			<h:outputText value="Departamento a Ser Alocado: *"/>
+			<h:inputText value="#{controleController.controle.departamento}"
+			required="true"
+			requiredMessage="O campo Descrição do Departamento é obrigatorio!">
+			<f:validateLength maximum="60"/>
+			</h:inputText>
+			
+			<h:outputText value="Valor do Bem: *"/>
+			<h:inputText value="#{controleController.controle.valorBem}"
+			required="true"
+			requiredMessage="O campo Valor do Bem é obrigatorio!">
+			<f:validateDoubleRange minimum="10"/>
+			</h:inputText>
+									
+			<h:outputText value="Data de Cadastro do Bem: *"/>
+			<h:inputText value="#{controleController.controle.dataCadastro}"
+			required="true"
+			requiredMessage="O campo Data de Cadastro é obrigatorio!">
+			<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+			</h:inputText>
+								
+			<h:commandButton value="Salvar" action="#{controleController.salvar}" />	
+			
+												
+		
+		</h:panelGrid>
+	
+	
+	
+	
+	
+	
+	
+	</h:form>
+	
+	</h:body>
+	
+
+</html>
